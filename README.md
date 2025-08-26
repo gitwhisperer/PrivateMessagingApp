@@ -154,5 +154,45 @@ Open the app, connect wallet, send an encrypted (demo) message.
 ## License
 MIT (add a LICENSE file if you distribute publicly).
 
+## GitHub Pages Deployment
+
+This repo includes an automated GitHub Actions workflow (`.github/workflows/deploy-web.yml`) that builds and deploys the `web/` front-end to GitHub Pages whenever you push to `main`.
+
+### 1. Enable Pages
+1. Go to GitHub repository Settings > Pages.
+2. Set Source to GitHub Actions.
+
+### 2. Provide Contract Address Secret
+Add a repository secret so the build knows your deployed contract address:
+
+Secrets & Variables > Actions > New repository secret:
+  Name: `VITE_CONTRACT_ADDRESS`
+  Value: `ST...::private-messaging`
+
+Optional variable (Actions variable, not secret) if you deploy under a sub-path or fork name mismatch:
+  Name: `VITE_BASE_PATH`
+  Value: `/YourRepoName/`
+
+### 3. (Optional) Override Other Env Vars
+Add additional Actions variables if you want custom app name/icon:
+  - `VITE_APP_NAME`
+  - `VITE_APP_ICON`
+
+### 4. Trigger Deployment
+Push to `main` (or use the workflow_dispatch manual run). The workflow will:
+  - Install dependencies
+  - Build the Vite project with the supplied env
+  - Upload & publish to Pages
+
+### 5. SPA Routing
+`404.html` is a copy of `index.html` and `.nojekyll` is added so client-side routing works on Pages.
+
+### Local Build With Same Base Path
+If your pages URL is `https://<user>.github.io/<repo>/`, set locally:
+```
+VITE_BASE_PATH=/<repo>/ npm run build
+```
+The produced assets will reference the correct public path.
+
 ---
 This is a minimal on-chain core. Extend responsibly and test thoroughly before production deployment.
