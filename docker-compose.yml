@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  backend:
+    build: ./backend
+    env_file: ./backend/.env.example # replace with .env in prod
+    ports:
+      - "4000:4000"
+  web:
+    build: ./web
+    environment:
+      - VITE_CONTRACT_ADDRESS=${VITE_CONTRACT_ADDRESS}
+      - VITE_STACKS_NETWORK=${VITE_STACKS_NETWORK:-testnet}
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend

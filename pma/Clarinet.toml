@@ -1,0 +1,37 @@
+[project]
+name = "pma"
+description = ""
+authors = []
+telemetry = true
+cache_dir = "./.cache"
+
+# [contracts.counter]
+# path = "contracts/counter.clar"
+# epoch = "latest"
+
+[repl.analysis]
+passes = ["check_checker"]
+check_checker = { trusted_sender = true, trusted_caller = true, callee_filter = true }
+
+# Placeholder accounts section. Do NOT place real mnemonics here.
+# For local deployment create an untracked file: settings/LocalDeploy.toml
+# with:
+# [network]
+# name = "testnet" # or mainnet
+# [accounts.deployer]
+# mnemonic = "<24 word seed phrase>"
+# balance = 1_000_000_000
+# Then run: clarinet console --config settings/LocalDeploy.toml
+
+[contracts.private-messaging]
+path = "contracts/private-messaging.clar"
+clarity_version = 2
+epoch = "3.0"
+
+# Check-checker settings:
+# trusted_sender: if true, inputs are trusted after tx_sender has been checked.
+# trusted_caller: if true, inputs are trusted after contract-caller has been checked.
+# callee_filter: if true, untrusted data may be passed into a private function without a
+# warning, if it gets checked inside. This check will also propagate up to the
+# caller.
+# More informations: https://www.hiro.so/blog/new-safety-checks-in-clarinet

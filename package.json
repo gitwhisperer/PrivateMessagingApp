@@ -1,0 +1,12 @@
+{
+  "name": "private-messaging-app-tests",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "test": "clarinet test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "typescript": "^5.4.0"
+  }
+}

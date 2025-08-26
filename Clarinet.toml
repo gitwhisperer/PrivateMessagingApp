@@ -1,0 +1,9 @@
+[project]
+name = "private-messaging-app"
+authors = ["your-name <you@example.com>"]
+description = "Decentralized private messaging (encrypted ciphertext on-chain)"
+
+[contracts.private-messaging]
+path = "contracts/private-messaging.clar"
+clarity_version = 2
+epoch = 3.0
