@@ -5,7 +5,7 @@ Private Messaging App (PMA) – A Web3, end-to-end encrypted, WhatsApp‑style m
 
 ###Contract details
 
-ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A.private-messaging
+Contract id - ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A.private-messaging
 
 ![alt text](image-1.png)
 
