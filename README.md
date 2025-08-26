@@ -131,11 +131,6 @@ Or use Explorer Sandbox (Testnet) to paste the contract and deploy.
 5. Recipient loads inbox; dApp paginates via `get-inbox-count` + `get-inbox-message-id` + `get-message`.
 6. Mark messages as read (`mark-read`) to update read receipts.
 
-## 9. Screenshots / Demo
-Add screenshots or a Loom/YT link here (placeholder).
-
-## 10. Team Members
-Solo project (update if collaborating). Provide names / roles here.
 
 ## 11. Submission Compliance Checklist
 
