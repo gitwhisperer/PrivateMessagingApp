@@ -9,7 +9,6 @@ Contract id - ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A.private-messaging
 
 ![alt text](image-1.png)
 
-![alt text](image.png)
 
 ## 2. Project Description
 The Private Messaging App is a decentralized messaging protocol and reference smart contract built on the Stacks blockchain (settled on Bitcoin). It enables users to:
@@ -286,5 +285,3 @@ This is a minimal on-chain core. Extend responsibly and test thoroughly before p
 Contract id - ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A.private-messaging
 
 ![alt text](image-1.png)
-
-![alt text](image.png)
