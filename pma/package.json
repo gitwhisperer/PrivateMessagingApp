@@ -10,15 +10,20 @@
     "test:report": "vitest run -- --coverage --costs",
     "test:watch": "chokidar \"tests/**/*.ts\" \"contracts/**/*.clar\" -c \"npm run test:report\"",
     "deploy:testnet": "powershell -ExecutionPolicy Bypass -File ./scripts/validate-mnemonic.ps1 ./settings/Testnet.toml ; if ($LastExitCode -ne 0) { exit $LastExitCode } ; echo Deploying with Clarinet... ; clarinet deployment generate --testnet --low-cost && clarinet deployment apply --testnet --low-cost",
-    "deploy:testnet:auto": "powershell -ExecutionPolicy Bypass -File ./scripts/deploy-testnet.ps1"
+    "deploy:testnet:auto": "powershell -ExecutionPolicy Bypass -File ./scripts/deploy-testnet.ps1",
+    "deploy:testnet:node": "node ./scripts/contract-deploy.js",
+    "derive:pk": "node ./scripts/derive-privkey.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@hirosystems/clarinet-sdk": "^3.0.2",
     "@stacks/transactions": "^7.0.6",
+    "@stacks/network": "^7.0.6",
     "chokidar-cli": "^3.0.0",
+    "@stacks/wallet-sdk": "^7.0.6",
     "vitest": "^3.1.3",
     "vitest-environment-clarinet": "^2.3.0"
-  }
+  },
+  "devDependencies": {}
 }

@@ -1,6 +1,6 @@
 # Private Messaging App (Clarity + Stacks)
 
-![alt text](image.png)
+
 ## 1. Project Title
 Private Messaging App (PMA) – A Web3, end-to-end encrypted, WhatsApp‑style messaging layer on Stacks.
 
@@ -279,3 +279,10 @@ The produced assets will reference the correct public path.
 ---
 This is a minimal on-chain core. Extend responsibly and test thoroughly before production deployment.
 
+###Contract details
+
+ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A.private-messaging
+
+![alt text](image-1.png)
+
+![alt text](image.png)

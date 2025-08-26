@@ -83,13 +83,13 @@ try {
   # (Optional) contract-name patch omitted for this Clarinet version; assuming plan has correct name.
 
   $applyVariants = @(
-    "clarinet deployments apply --testnet --plan $planFile --broadcast",
-    "clarinet deployments apply --testnet --plan $planFile",
-    "clarinet deployments apply --testnet --broadcast",
+    # Your Clarinet version expects a cost strategy on apply (no --plan/--broadcast flags)
+    "clarinet deployments apply --testnet --low-cost",
+    "clarinet deployments apply --testnet --medium-cost",
+    "clarinet deployment apply --testnet --low-cost",
+    "clarinet deployment apply --testnet --medium-cost",
+    # fallback plain
     "clarinet deployments apply --testnet",
-    "clarinet deployment apply --testnet --plan $planFile --broadcast",
-    "clarinet deployment apply --testnet --plan $planFile",
-    "clarinet deployment apply --testnet --broadcast",
     "clarinet deployment apply --testnet"
   )
 
@@ -105,6 +105,7 @@ try {
         break
       }
       if ($out -match 'Contract already exists') { Write-Warn 'Contract already exists on this address with that name.' }
+      if ($out -match 'insufficient' -or $out -match 'balance') { Write-Warn 'Possible insufficient balance; faucet-fund deployer and retry.' }
     } catch { Write-Warn "Failed: $cmd -> $($_.Exception.Message)" }
   }
   if (-not $txid) {
