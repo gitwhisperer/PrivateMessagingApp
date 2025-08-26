@@ -1,4 +1,4 @@
-# Private Messaging App (Clarity + Stacks)
+7# Private Messaging App (Clarity + Stacks)
 
 ## 1. Project Title
 Private Messaging App (PMA) – A Web3, end-to-end encrypted, WhatsApp‑style messaging layer on Stacks.
@@ -132,7 +132,7 @@ Or use Explorer Sandbox (Testnet) to paste the contract and deploy.
 6. Mark messages as read (`mark-read`) to update read receipts.
 
 
-## 11. Submission Compliance Checklist
+## 9. Submission Compliance Checklist
 
 - [ ] Contract deployed on testnet (address documented above and in `contract-address.txt`).
 - [ ] README includes title, description, tech stack, setup, usage, contract address.
