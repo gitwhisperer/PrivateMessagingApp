@@ -1,8 +1,15 @@
 # Private Messaging App (Clarity + Stacks)
 
-
 ## 1. Project Title
 Private Messaging App (PMA) – A Web3, end-to-end encrypted, WhatsApp‑style messaging layer on Stacks.
+
+###Contract details
+
+ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A.private-messaging
+
+![alt text](image-1.png)
+
+![alt text](image.png)
 
 ## 2. Project Description
 The Private Messaging App is a decentralized messaging protocol and reference smart contract built on the Stacks blockchain (settled on Bitcoin). It enables users to:
@@ -279,10 +286,3 @@ The produced assets will reference the correct public path.
 ---
 This is a minimal on-chain core. Extend responsibly and test thoroughly before production deployment.
 
-###Contract details
-
-ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A.private-messaging
-
-![alt text](image-1.png)
-
-![alt text](image.png)
