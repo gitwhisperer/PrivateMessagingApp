@@ -1,5 +1,6 @@
 # Private Messaging App (Clarity + Stacks)
 
+![alt text](image.png)
 ## 1. Project Title
 Private Messaging App (PMA) – A Web3, end-to-end encrypted, WhatsApp‑style messaging layer on Stacks.
 
@@ -50,18 +51,99 @@ Roadmap items to evolve toward a full “WhatsApp-like” experience while maint
 Additional security/privacy upgrades could include: metadata mixing, batching, or leveraging subnets/microblocks for lower latency; integration of threshold cryptography for group encryption.
 
 ## 5. Contract Address Details
-Placeholder – to be added after deployment.
-
-Add your deployment details below once you deploy with Clarinet, Hiro Explorer, or directly via the Leather wallet:
+Deployed (Testnet)
 
 ```
-Network: (testnet/mainnet)
-Deployer Principal: STXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Network: testnet
+Deployer Principal: ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A
 Contract Name: private-messaging
-Tx ID: 0x................................................
-Contract Address: ST...::private-messaging
-Deployment Block: NNNNNN
+Contract Identifier: ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A::private-messaging
+Tx ID: (add txid here)  <-- PLEASE FILL IN
+Deployment Block: (add block height)  <-- PLEASE FILL IN
+Explorer Link: https://explorer.hiro.so/contract/ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A.private-messaging?chain=testnet
 ```
+
+## 6. Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| Smart Contract | Clarity (Stacks, epoch 3.0, clarity_version 2) |
+| Dev Tooling | Clarinet (deployment plans, simulation) |
+| Frontend | React 18 + Vite 5 (TypeScript) |
+| Wallet Integration | @stacks/connect, @stacks/transactions |
+| Crypto (client-side placeholder) | tweetnacl / tweetnacl-util |
+| Backend (optional) | Node.js + Express (helmet, compression, rate limiting) |
+| Deployment (web) | GitHub Pages / Netlify compatible (SPA with _redirects) |
+| Testing (contracts) | Vitest + vitest-environment-clarinet |
+
+## 7. Setup Instructions (Dev)
+
+Prerequisites: Node.js 20+, Clarinet installed, Leather wallet (Testnet mode).
+
+Clone & install:
+```
+git clone <repo-url>
+cd PrivateMessagingApp
+cd web && npm install && cd ..
+cd pma && npm install && cd ..
+```
+
+Run contract checks:
+```
+cd pma
+clarinet check
+```
+
+Run frontend dev server:
+```
+cd web
+cp .env.example .env   # then set VITE_CONTRACT_ADDRESS=ST...::private-messaging
+npm run dev
+```
+
+Build frontend:
+```
+cd web
+npm run build
+```
+
+Deploy contract (testnet) via Clarinet plan (ensure mnemonic in `pma/settings/Testnet.toml` and funded):
+```
+cd pma
+clarinet deployments generate --testnet --output deployments/plan.testnet.yaml
+clarinet deployments apply --testnet --plan deployments/plan.testnet.yaml --broadcast
+```
+
+Or use Explorer Sandbox (Testnet) to paste the contract and deploy.
+
+## 8. How to Use
+1. Connect your Stacks testnet wallet in the web app.
+2. Register a username + public key (app triggers `register`).
+3. Add another wallet/account, register it.
+4. Send an encrypted (demo) message (triggers `send-message`).
+5. Recipient loads inbox; dApp paginates via `get-inbox-count` + `get-inbox-message-id` + `get-message`.
+6. Mark messages as read (`mark-read`) to update read receipts.
+
+## 9. Screenshots / Demo
+Add screenshots or a Loom/YT link here (placeholder).
+
+## 10. Team Members
+Solo project (update if collaborating). Provide names / roles here.
+
+## 11. Submission Compliance Checklist
+
+- [ ] Contract deployed on testnet (address documented above and in `contract-address.txt`).
+- [ ] README includes title, description, tech stack, setup, usage, contract address.
+- [ ] Clarity contract commented for logic clarity.
+- [ ] Frontend present and buildable (React + Vite).
+- [ ] All required directories present (`contracts/`, `web/`, `contract-address.txt`).
+- [ ] Optional backend included (not required for core messaging logic).
+- [ ] No private mnemonics committed (ignored via .gitignore rules).
+
+If any item is unchecked, address it before final submission.
+
+
+If you redeploy or version the contract, append additional entries instead of overwriting to preserve provenance.
 
 ## Repository Structure
 
@@ -196,3 +278,4 @@ The produced assets will reference the correct public path.
 
 ---
 This is a minimal on-chain core. Extend responsibly and test thoroughly before production deployment.
+

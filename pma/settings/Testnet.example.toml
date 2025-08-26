@@ -1,0 +1,8 @@
+[network]
+name = "testnet"
+stacks_node_rpc_address = "https://api.testnet.hiro.so"
+deployment_fee_rate = 10
+
+[accounts.deployer]
+# 24-word TESTNET seed phrase ONLY. Do NOT use mainnet funds here.
+mnemonic = "<REPLACE WITH 24 WORD TESTNET MNEMONIC>"

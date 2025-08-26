@@ -1,0 +1,8 @@
+[network]
+name = "mainnet"
+stacks_node_rpc_address = "https://api.hiro.so"
+deployment_fee_rate = 10
+
+[accounts.deployer]
+# 24-word MAINNET seed phrase (NEVER commit the real one)
+mnemonic = "<REPLACE WITH 24 WORD MAINNET MNEMONIC>"

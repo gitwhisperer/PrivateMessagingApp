@@ -1,0 +1,12 @@
+# Smart Contract Deployment Address
+# Replace the placeholder values below with the real deployed contract details once broadcast succeeds.
+
+Network: testnet
+Deployer Principal: ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A
+Contract Identifier: ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A::private-messaging
+Tx ID: (replace with 0x... once confirmed)
+Block Height: (replace with block number)
+Timestamp: (optional)
+
+# Verification Link (Testnet Explorer)
+https://explorer.hiro.so/contract/ST1N16XX6H8BEVCEMPD3MVJBC9WP3C3996A1MEH3A.private-messaging?chain=testnet

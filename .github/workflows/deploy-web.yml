@@ -35,16 +35,22 @@ jobs:
         working-directory: web
         run: npm ci
 
+      - name: Derive GitHub Pages base path
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          echo "Derived repo name: $REPO_NAME"
+          echo "VITE_BASE_PATH=/$REPO_NAME/" >> $GITHUB_ENV
+          echo "Using base path: /$REPO_NAME/"
+
       - name: Build
         working-directory: web
         env:
           VITE_STACKS_NETWORK: testnet
           # Provide this via repository secret (Settings > Secrets > Actions)
-          VITE_CONTRACT_ADDRESS: ${{ secrets.VITE_CONTRACT_ADDRESS }}
+          # Add VITE_CONTRACT_ADDRESS later as a secret; empty default keeps build working
+          VITE_CONTRACT_ADDRESS: ""
           VITE_APP_NAME: 'PMA Web'
           VITE_APP_ICON: 'https://placehold.co/64x64'
-          # Optional override if you fork under a different repo name
-          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH }}
         run: npm run build
 
       - name: Add SPA fallback & nojekyll
@@ -60,9 +66,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
